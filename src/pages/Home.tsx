@@ -1,18 +1,25 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { fetchCats } from '../services/cats';
 import type { CatImage } from '../types/cats';
+import BreedSelector from '../components/BreedSelector';
 
 const Home: React.FC = () => {
+  const [selectedBreed, setSelectedBreed] = useState<string>('');
+
   const {
     data: cats,
     isLoading,
     isError,
     error,
   } = useQuery<CatImage[], Error>({
-    queryKey: ['cats', 12],
-    queryFn: () => fetchCats(12),
+    queryKey: ['cats', selectedBreed],
+    queryFn: () => fetchCats(selectedBreed, 12),
   });
+
+  const handleBreedChange = (breedId: string) => {
+    setSelectedBreed(breedId);
+  };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -23,8 +30,15 @@ const Home: React.FC = () => {
   }
 
   return (
-    <main className="container p-4">
+    <main className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-6 text-center">Cat Gallery</h1>
+
+      <div className="flex justify-center mb-4">
+        <BreedSelector
+          selectedBreed={selectedBreed}
+          onBreedChange={handleBreedChange}
+        />
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {cats?.map((cat) => (
