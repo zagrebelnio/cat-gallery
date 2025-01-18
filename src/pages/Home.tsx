@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { fetchCats } from '../services/cats';
 import type { CatImage } from '../types/cats';
 import BreedSelector from '../components/BreedSelector';
+import CatCard from '../components/CatCard';
 
 const Home: React.FC = () => {
   const [selectedBreed, setSelectedBreed] = useState<string>('');
@@ -42,25 +43,12 @@ const Home: React.FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {cats?.map((cat) => (
-          <div
+          <CatCard
             key={cat.id}
-            className="border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-          >
-            <img
-              src={cat.url}
-              alt={cat.breeds[0]?.name || 'Cute Cat'}
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-2">
-              {cat.breeds.length > 0 ? (
-                <p className="font-semibold text-center">
-                  {cat.breeds[0].name}
-                </p>
-              ) : (
-                <p className="font-light text-center">Unknown breed</p>
-              )}
-            </div>
-          </div>
+            catId={cat.id}
+            imageUrl={cat.url}
+            breedName={cat.breeds[0]?.name}
+          />
         ))}
       </div>
     </main>

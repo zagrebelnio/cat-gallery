@@ -13,14 +13,10 @@ const FavoritesContext = createContext<FavoritesContextValue | undefined>(
 export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [favoriteCatIds, setFavoriteCatIds] = useState<string[]>([]);
-
-  useEffect(() => {
+  const [favoriteCatIds, setFavoriteCatIds] = useState<string[]>(() => {
     const stored = localStorage.getItem('favoriteCats');
-    if (stored) {
-      setFavoriteCatIds(JSON.parse(stored));
-    }
-  }, []);
+    return stored ? JSON.parse(stored) : [];
+  });
 
   useEffect(() => {
     localStorage.setItem('favoriteCats', JSON.stringify(favoriteCatIds));
