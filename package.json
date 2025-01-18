@@ -11,6 +11,17 @@
     "prepare": "husky install",
     "format": "prettier --write ."
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@tanstack/react-query": "^5.64.1",
     "react": "^18.3.1",
