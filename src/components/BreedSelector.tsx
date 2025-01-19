@@ -32,7 +32,7 @@ const BreedSelector: React.FC<BreedSelectorProps> = ({
     <select
       value={selectedBreed}
       onChange={handleChange}
-      className="border p-2 text-black"
+      className="block min-w-64 text-black px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
     >
       <option value="">All Breeds</option>
       {breeds?.map((breed) => (

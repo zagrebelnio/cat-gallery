@@ -12,13 +12,25 @@ const Navbar: React.FC = () => {
         <div className="space-x-4">
           <NavLink
             to="/"
-            className={({ isActive }) => (isActive ? 'text-yellow-400' : '')}
+            className={({ isActive }) =>
+              `hover:text-yellow-300 ${
+                isActive
+                  ? 'text-yellow-400 font-bold underline underline-offset-4'
+                  : ''
+              }`
+            }
           >
             Home
           </NavLink>
           <NavLink
             to="/favorites"
-            className={({ isActive }) => (isActive ? 'text-yellow-400' : '')}
+            className={({ isActive }) =>
+              `hover:text-yellow-300 ${
+                isActive
+                  ? 'text-yellow-400 font-bold underline underline-offset-4'
+                  : ''
+              }`
+            }
           >
             Favorites
           </NavLink>
