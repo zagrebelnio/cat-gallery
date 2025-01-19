@@ -32,7 +32,8 @@ A simple web application that displays a gallery of cat images fetched from [The
 
 5. **Deployment**
 
-   - TO DO
+   - Deployed on Netlify.
+   - [Demo Link](https://cat-gallery-zagrebelnio.netlify.app/)
 
 6. **Presentation**
    - TO DO
