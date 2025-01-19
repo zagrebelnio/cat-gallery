@@ -4,6 +4,7 @@ import { fetchCats } from '../services/cats';
 import type { CatImage } from '../types/cats';
 import BreedSelector from '../components/BreedSelector';
 import CatCard from '../components/CatCard';
+import Spinner from '../components/Spinner';
 
 const Home: React.FC = () => {
   const [selectedBreed, setSelectedBreed] = useState<string>('');
@@ -23,11 +24,19 @@ const Home: React.FC = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <main className="container mx-auto p-4 flex justify-center items-center h-screen">
+        <Spinner />
+      </main>
+    );
   }
 
   if (isError) {
-    return <div>Error: {error?.message || 'Something went wrong'}</div>;
+    return (
+      <div className="text-center mt-8 px-4 text-lg">
+        Error: {error?.message || 'Something went wrong'}
+      </div>
+    );
   }
 
   return (
