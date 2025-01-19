@@ -14,6 +14,8 @@ const Favorites: React.FC = () => {
       return {
         queryKey: ['catById', catId],
         queryFn: () => fetchCatById(catId),
+        refetchOnWindowFocus: false,
+        refetchOnMount: false,
       };
     }),
   });

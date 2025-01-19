@@ -17,6 +17,8 @@ const Home: React.FC = () => {
   } = useQuery<CatImage[], Error>({
     queryKey: ['cats', selectedBreed],
     queryFn: () => fetchCats(selectedBreed, 12),
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
   });
 
   const handleBreedChange = (breedId: string) => {
