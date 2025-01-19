@@ -44,7 +44,7 @@ A simple web application that displays a gallery of cat images fetched from [The
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/cat-gallery.git
+git clone https://github.com/zagrebelnio/cat-gallery.git
 cd cat-gallery
 ```
 
