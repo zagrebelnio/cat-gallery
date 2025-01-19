@@ -19,7 +19,7 @@ A simple web application that displays a gallery of cat images fetched from [The
 
 3. **Favoriting Cats**
 
-   - “Favorite” button or icon on each cat card.
+   - “Favorite” button on each cat card.
    - Persists favorite status in `localStorage`.
    - Visual difference for favorite vs. non-favorite cats.
    - Favorites page displays only favorited cats.
@@ -34,9 +34,6 @@ A simple web application that displays a gallery of cat images fetched from [The
 
    - Deployed on Netlify.
    - [Demo Link](https://cat-gallery-zagrebelnio.netlify.app/)
-
-6. **Presentation**
-   - TO DO
 
 ---
 
