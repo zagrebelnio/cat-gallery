@@ -19,6 +19,8 @@ const BreedSelector: React.FC<BreedSelectorProps> = ({
   } = useQuery<CatBreed[], Error>({
     queryKey: ['breeds'],
     queryFn: fetchBreeds,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
   });
 
   if (isLoading) return <p>Loading breeds...</p>;
