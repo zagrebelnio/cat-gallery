@@ -32,8 +32,6 @@ const Home: React.FC = () => {
 
   return (
     <main className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6 text-center">Cat Gallery</h1>
-
       <div className="flex justify-center mb-4">
         <BreedSelector
           selectedBreed={selectedBreed}
