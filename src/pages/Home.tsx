@@ -40,14 +40,7 @@ const Home: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {cats?.map((cat) => (
-          <CatCard
-            key={cat.id}
-            catId={cat.id}
-            imageUrl={cat.url}
-            breedName={cat.breeds[0]?.name}
-          />
-        ))}
+        {cats?.map((cat) => <CatCard key={cat.id} cat={cat} />)}
       </div>
     </main>
   );

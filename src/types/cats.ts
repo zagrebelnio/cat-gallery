@@ -3,7 +3,8 @@ export interface CatBreed {
   name: string;
   origin: string;
   temperament: string;
-  description: string;
+  country_code: string;
+  life_span: string;
 }
 
 export interface CatImage {
